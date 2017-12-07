@@ -1,0 +1,76 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyBoosController"
+        ],
+        "name": "LoginRegister",
+        "requires": [
+            "Ext.window.MessageBox"
+        ],
+        "views": [
+            "MainView",
+            "LoginForm",
+            "RegisterForm"
+        ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "name": "string",
+        "requires": "typedarray",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "vista"
+                ],
+                "fn": "setVistaPpal",
+                "implHandler": [
+                    "this.vista=vista;"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "setVistaPpal",
+            "designerId": "9ffc5005-a0a8-40d5-8aff-ce7d78489b46"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getVistaPpal",
+                "implHandler": [
+                    "return this.vista;"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getVistaPpal",
+            "designerId": "4c9e9c48-0a00-4eb7-b9e4-5fb2ccd43cd3"
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyBoosController"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "342acbe4-a629-40cc-9094-887239aa2256",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "laFuncion",
+                "implHandler": [
+                    "alert('ejecutando funcion de controller ext simple');",
+                    "//query returns an array of matching components, we choose the one and only",
+                    "//console.warn(this.getMainViewView());",
+                    "//var test2View = this.getMainViewView();//Ext.ComponentQuery.query('MainView')[0];",
+                    "//test2View.abrirLogin();",
+                    "",
+                    "//console.warn(LoginRegister.app.views);",
+                    "//console.warn(Ext.ComponentQuery.query('Login'));",
+                    "",
+                    "//Ext.widget('mainview').abrirLogin();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "laFuncion",
+            "designerId": "54a4c89c-9667-4fcc-9d03-25e64164606f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "laFuncion2",
+                "implHandler": [
+                    "Ext.Msg.alert('Alerta', 'Ejecutando funcion laFuncion2');"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "laFuncion2",
+            "designerId": "623b426a-c4fb-4db0-8086-7f11ea53544a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "msg"
+                ],
+                "fn": "laFuncion3",
+                "implHandler": [
+                    "Ext.Msg.alert('Mensaje', '::'+msg);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "laFuncion3",
+            "designerId": "ecd14504-c724-47b4-83e6-db93525dafec"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "abrirLogin",
+                "implHandler": [
+                    "//Ext.widget('mainview').abrirLogin();",
+                    "LoginRegister.app.getVistaPpal().abrirLogin();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "abrirLogin",
+            "designerId": "6a36f402-783a-4bb8-8ef4-79cf06e0a368"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "abrirRegistro",
+                "implHandler": [
+                    "//Ext.widget('mainview').abrirRegistro();",
+                    "LoginRegister.app.getVistaPpal().abrirRegistro();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "abrirRegistro",
+            "designerId": "ba8ee26b-6609-4108-9a76-4b333282d4d7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "cambiarBoton",
+                "implHandler": [
+                    "//Ext.widget('mainview').cambiarBoton();",
+                    "LoginRegister.app.getVistaPpal().cambiarBoton();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "cambiarBoton",
+            "designerId": "9eb8c64c-06e4-4762-a9f7-e6079c2d0ed2"
+        }
+    ]
+}

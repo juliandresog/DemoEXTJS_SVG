@@ -17,6 +17,15 @@ Ext.define('LoginRegister.view.MainViewViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.mainview',
 
+    moveSlider: function(value, direction) {
+        if(this.getView().rendered){
+            var svg = document.getElementById("circle-svg");
+            var svgDoc = svg.contentDocument;
+            var circle = svgDoc.getElementById("my-circle");
+            circle.setAttributeNS(null, "c" + direction, value * 5);
+        }
+    },
+
     onLoginButtonClick: function(button, e, eOpts) {
         this.getView().abrirLogin();
     },
@@ -44,6 +53,16 @@ Ext.define('LoginRegister.view.MainViewViewController', {
         //Ext.widget('mainview').abrirLogin();
         //var test2View = Ext.ComponentQuery.query('MainView')[0];
         //test2View.abrirLogin();
+    },
+
+    onSliderXChange: function(slider, newValue, thumb, type, eOpts) {
+        //console.log('Val X:'+newValue);
+        this.moveSlider(newValue, 'x');
+    },
+
+    onSliderYChange: function(slider, newValue, thumb, type, eOpts) {
+        //console.log('Val Y:'+newValue);
+        this.moveSlider(newValue, 'y');
     },
 
     onViewportAfterRender: function(component, eOpts) {

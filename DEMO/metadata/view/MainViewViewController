@@ -13,5 +13,37 @@
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "8c068b86-ec11-4fee-bf64-ad89c0d92ad7"
+    "designerId": "8c068b86-ec11-4fee-bf64-ad89c0d92ad7",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "direction"
+                ],
+                "fn": "moveSlider",
+                "implHandler": [
+                    "if(this.getView().rendered){",
+                    "    var svg = document.getElementById(\"circle-svg\");",
+                    "    var svgDoc = svg.contentDocument;",
+                    "    var circle = svgDoc.getElementById(\"my-circle\");",
+                    "    circle.setAttributeNS(null, \"c\" + direction, value * 5);",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "moveSlider",
+            "designerId": "d975e8fe-38fd-4bb9-8dd8-4f920ec5b45d"
+        }
+    ]
 }

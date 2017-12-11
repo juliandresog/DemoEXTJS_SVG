@@ -22,7 +22,8 @@ Ext.define('LoginRegister.view.MainView', {
         'LoginRegister.view.MainViewViewController',
         'Ext.panel.Panel',
         'Ext.button.Button',
-        'Ext.form.Label'
+        'Ext.form.Label',
+        'Ext.slider.Single'
     ],
 
     controller: 'mainview',
@@ -36,7 +37,7 @@ Ext.define('LoginRegister.view.MainView', {
             xtype: 'panel',
             region: 'north',
             height: 100,
-            title: 'Header',
+            title: 'Encabezado',
             dockedItems: [
                 {
                     xtype: 'panel',
@@ -81,7 +82,7 @@ Ext.define('LoginRegister.view.MainView', {
             items: [
                 {
                     xtype: 'button',
-                    text: 'MyButton',
+                    text: 'OK',
                     listeners: {
                         click: 'onButton1Click'
                     }
@@ -98,14 +99,61 @@ Ext.define('LoginRegister.view.MainView', {
             xtype: 'panel',
             region: 'center',
             itemId: 'contentPanel',
-            layout: 'fit',
             title: 'Content',
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            },
             items: [
                 {
-                    xtype: 'label',
-                    height: 700,
-                    html: '<object style="height:670px; width:900px" data="data/demo2.svg" type="image/svg+xml">     No soporta SVG   </object>',
-                    width: 500
+                    xtype: 'panel',
+                    flex: 1,
+                    frame: true,
+                    layout: 'fit',
+                    title: 'Controlando EXTJS desde SVG',
+                    items: [
+                        {
+                            xtype: 'label',
+                            flex: 1,
+                            height: 700,
+                            html: '<object style="height:670px; width:900px" data="data/demo2.svg" type="image/svg+xml">     No soporta SVG   </object>',
+                            width: 500
+                        }
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    flex: 1,
+                    frame: true,
+                    title: 'Controlando SVG desde EXTJS',
+                    items: [
+                        {
+                            xtype: 'slider',
+                            id: 'sliderX',
+                            width: 400,
+                            fieldLabel: 'sliderX',
+                            value: 20,
+                            maxValue: 80,
+                            listeners: {
+                                change: 'onSliderXChange'
+                            }
+                        },
+                        {
+                            xtype: 'slider',
+                            id: 'sliderY',
+                            width: 400,
+                            fieldLabel: 'sliderY',
+                            value: 20,
+                            maxValue: 60,
+                            listeners: {
+                                change: 'onSliderYChange'
+                            }
+                        },
+                        {
+                            xtype: 'label',
+                            html: '<div><object id="circle-svg" width="200" height="200" type="image/svg+xml" data="data/moving_circle.svg"></object></div>'
+                        }
+                    ]
                 }
             ]
         }

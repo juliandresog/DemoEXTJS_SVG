@@ -34,7 +34,7 @@
                 "height": 100,
                 "itemId": null,
                 "layout|region": "north",
-                "title": "Header"
+                "title": "Encabezado"
             },
             "configAlternates": {
                 "height": "auto",
@@ -242,7 +242,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "text": "MyButton"
+                        "text": "OK"
                     },
                     "configAlternates": {
                         "text": "string"
@@ -310,8 +310,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "container|align": "stretch",
                 "itemId": "contentPanel",
-                "layout": "fit",
+                "layout": "hbox",
                 "layout|region": "center",
                 "title": "Content"
             },
@@ -319,30 +320,201 @@
                 "itemId": "string",
                 "layout": "string",
                 "layout|region": "string",
-                "title": "string"
+                "title": "string",
+                "container|align": "string"
             },
             "name": "MyPanel4",
             "designerId": "ad57e8bb-cc7f-49f3-a52f-9004f8f71568",
             "cn": [
                 {
-                    "type": "Ext.form.Label",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 700,
-                        "html": "<object style=\"height:670px; width:900px\" data=\"data/demo2.svg\" type=\"image/svg+xml\">     No soporta SVG   </object>",
-                        "width": 500
+                        "designer|uiInterfaceName": "default-framed",
+                        "frame": true,
+                        "layout": "fit",
+                        "layout|flex": 1,
+                        "title": "Controlando EXTJS desde SVG"
                     },
                     "configAlternates": {
-                        "height": "auto",
-                        "html": "string",
-                        "width": "auto"
+                        "designer|uiInterfaceName": "string",
+                        "frame": "boolean",
+                        "layout": "string",
+                        "layout|flex": "number",
+                        "title": "string"
                     },
-                    "name": "MyLabel",
-                    "designerId": "1007646d-1a70-4319-976c-54e5ea3ff05d"
+                    "name": "MyPanel",
+                    "designerId": "57cad0f3-2894-43da-a685-06ce83265a83",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "height": 700,
+                                "html": "<object style=\"height:670px; width:900px\" data=\"data/demo2.svg\" type=\"image/svg+xml\">     No soporta SVG   </object>",
+                                "width": 500
+                            },
+                            "configAlternates": {
+                                "height": "auto",
+                                "html": "string",
+                                "width": "auto",
+                                "flex": "number"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "1007646d-1a70-4319-976c-54e5ea3ff05d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "default-framed",
+                        "frame": true,
+                        "layout|flex": 1,
+                        "title": "Controlando SVG desde EXTJS"
+                    },
+                    "configAlternates": {
+                        "designer|uiInterfaceName": "string",
+                        "frame": "boolean",
+                        "layout|flex": "number",
+                        "title": "string"
+                    },
+                    "name": "MyPanel5",
+                    "designerId": "901fca90-420b-4201-aa14-52809788bb55",
+                    "cn": [
+                        {
+                            "type": "Ext.slider.Single",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "sliderX",
+                                "id": "sliderX",
+                                "maxValue": 80,
+                                "value": 20,
+                                "width": 400
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "maxValue": "number",
+                                "value": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySlider",
+                            "designerId": "cc2b9183-97c4-4ab3-9487-d72f3b789eb8",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSliderXChange",
+                                        "implHandler": [
+                                            "//console.log('Val X:'+newValue);",
+                                            "this.moveSlider(newValue, 'x');"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSliderXChange",
+                                    "designerId": "327fa3a9-c484-47f3-800c-8f8844af3a4e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.slider.Single",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "sliderY",
+                                "id": "sliderY",
+                                "maxValue": 60,
+                                "value": 20,
+                                "width": 400
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "maxValue": "number",
+                                "value": "number",
+                                "width": "auto"
+                            },
+                            "name": "MySlider1",
+                            "designerId": "ab10da37-4ddb-4216-a7f2-a429b09cd734",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSliderYChange",
+                                        "implHandler": [
+                                            "//console.log('Val Y:'+newValue);",
+                                            "this.moveSlider(newValue, 'y');"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSliderYChange",
+                                    "designerId": "7d84ef75-1f12-4776-9819-555267204f02"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<div><object id=\"circle-svg\" width=\"200\" height=\"200\" type=\"image/svg+xml\" data=\"data/moving_circle.svg\"></object></div>"
+                            },
+                            "configAlternates": {
+                                "html": "string"
+                            },
+                            "name": "MyLabel1",
+                            "designerId": "173eea61-369f-4d1a-9183-413cb5968293"
+                        }
+                    ]
                 }
             ]
         },
